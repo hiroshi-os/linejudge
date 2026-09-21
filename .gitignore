@@ -1,0 +1,18 @@
+# binaries / data
+/bin/
+/data/
+*.db
+*.db-shm
+*.db-wal
+.env
+.env.local
+node_modules/
+web/.next/
+web/out/
+dist/
+coverage/
+*.log
+.DS_Store
+eval-report.json
+.idea/
+.vscode/

@@ -1,0 +1,17 @@
+{
+  "action": "synchronize",
+  "number": 141,
+  "_fixture": "invoice-handler",
+  "pull_request": {
+    "number": 141,
+    "title": "Add invoice lookup endpoint",
+    "head": { "sha": "bada55bada55bada55bada55bada55bada55bada", "ref": "feat/invoice-get" },
+    "base": { "ref": "main", "sha": "bbb222bbb222bbb222bbb222bbb222bbb222bbb2" }
+  },
+  "repository": {
+    "full_name": "acme/payments",
+    "name": "payments",
+    "owner": { "login": "acme" }
+  },
+  "installation": { "id": 1 }
+}

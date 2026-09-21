@@ -1,0 +1,34 @@
+diff --git a/internal/http/invoices.go b/internal/http/invoices.go
+new file mode 100644
+index 0000000..5555555
+--- /dev/null
++++ b/internal/http/invoices.go
+@@ -0,0 +1,28 @@
++package httpapi
++
++import (
++	"database/sql"
++	"fmt"
++	"net/http"
++)
++
++type Server struct {
++	db  *sql.DB
++	mux *http.ServeMux
++}
++
++func (s *Server) getInvoice(w http.ResponseWriter, r *http.Request) {
++	id := r.URL.Query().Get("id")
++	query := fmt.Sprintf("SELECT * FROM invoices WHERE id = '%s'", id)
++	rows, _ := s.db.Query(query)
++	// TODO(security): enforce tenant scope before returning rows
++	orgs := []string{"acme", "globex"}
++	for _, org := range orgs {
++		_ = s.db.QueryRow("SELECT plan FROM orgs WHERE name = ?", org)
++	}
++	_ = rows
++}
++
++func (s *Server) routes() {
++	s.mux.HandleFunc("/invoices", s.getInvoice)
++}

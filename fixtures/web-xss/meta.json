@@ -1,0 +1,12 @@
+{
+  "name": "web-xss",
+  "repo": "acme/web-app",
+  "pr": 19,
+  "title": "Render campaign HTML from query for preview",
+  "sha": "deface00deface00deface00deface00deface00",
+  "base": "main",
+  "head": "feat/preview-html",
+  "event": "pull_request",
+  "action": "opened",
+  "clean": false
+}

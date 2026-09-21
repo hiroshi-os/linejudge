@@ -1,0 +1,12 @@
+{
+  "name": "invoice-handler",
+  "repo": "acme/payments",
+  "pr": 141,
+  "title": "Add invoice lookup endpoint",
+  "sha": "bada55bada55bada55bada55bada55bada55bada",
+  "base": "main",
+  "head": "feat/invoice-get",
+  "event": "pull_request",
+  "action": "synchronize",
+  "clean": false
+}

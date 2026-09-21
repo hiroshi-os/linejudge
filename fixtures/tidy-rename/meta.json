@@ -1,0 +1,12 @@
+{
+  "name": "tidy-rename",
+  "repo": "acme/gateway",
+  "pr": 80,
+  "title": "Rename pool helper and add a comment",
+  "sha": "f00df00df00df00df00df00df00df00df00df00d",
+  "base": "main",
+  "head": "chore/rename-helper",
+  "event": "pull_request",
+  "action": "opened",
+  "clean": true
+}

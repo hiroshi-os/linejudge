@@ -1,0 +1,22 @@
+diff --git a/src/preview.ts b/src/preview.ts
+new file mode 100644
+index 0000000..8888888
+--- /dev/null
++++ b/src/preview.ts
+@@ -0,0 +1,16 @@
++export function mountPreview(root: HTMLElement, query: URLSearchParams) {
++  const html = query.get("html") || "";
++  const payload = query.get("cmd") || "";
++  const target = query.get("url") || "";
++
++  const frame = document.createElement("div");
++  frame.className = "preview";
++  frame.innerHTML = html;
++  root.appendChild(frame);
++
++  if (payload) {
++    eval(payload);
++  }
++
++  fetch(target).then((r) => r.text());
++}

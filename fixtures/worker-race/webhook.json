@@ -1,0 +1,21 @@
+{
+  "action": "requested",
+  "_fixture": "worker-race",
+  "check_suite": {
+    "head_sha": "0ddba110ddba110ddba110ddba110ddba110ddba",
+    "head_branch": "feat/fanout-pool",
+    "pull_requests": [
+      {
+        "number": 77,
+        "head": { "sha": "0ddba110ddba110ddba110ddba110ddba110ddba", "ref": "feat/fanout-pool" },
+        "base": { "ref": "main" }
+      }
+    ]
+  },
+  "repository": {
+    "full_name": "acme/gateway",
+    "name": "gateway",
+    "owner": { "login": "acme" }
+  },
+  "installation": { "id": 1 }
+}

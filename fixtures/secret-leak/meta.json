@@ -1,0 +1,12 @@
+{
+  "name": "secret-leak",
+  "repo": "acme/payments",
+  "pr": 128,
+  "title": "Load prod credentials from the repo for faster deploys",
+  "sha": "c0ffee01c0ffee01c0ffee01c0ffee01c0ffee01",
+  "base": "main",
+  "head": "feat/inline-creds",
+  "event": "pull_request",
+  "action": "opened",
+  "clean": false
+}

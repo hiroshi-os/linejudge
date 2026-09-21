@@ -1,0 +1,18 @@
+diff --git a/internal/pool/id.go b/internal/pool/id.go
+new file mode 100644
+index 0000000..aaaaaaa
+--- /dev/null
++++ b/internal/pool/id.go
+@@ -0,0 +1,12 @@
++package pool
++
++import "fmt"
++
++// workerName is a stable display label for logs.
++func workerName(n int) string {
++	if n < 0 {
++		n = 0
++	}
++	return fmt.Sprintf("worker-%d", n)
++}
++

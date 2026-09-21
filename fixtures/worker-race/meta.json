@@ -1,0 +1,12 @@
+{
+  "name": "worker-race",
+  "repo": "acme/gateway",
+  "pr": 77,
+  "title": "Fan-out worker pool for upstream fan-in",
+  "sha": "0ddba110ddba110ddba110ddba110ddba110ddba",
+  "base": "main",
+  "head": "feat/fanout-pool",
+  "event": "check_suite",
+  "action": "requested",
+  "clean": false
+}

@@ -1,0 +1,36 @@
+diff --git a/config/prod.yaml b/config/prod.yaml
+new file mode 100644
+index 0000000..1111111
+--- /dev/null
++++ b/config/prod.yaml
+@@ -0,0 +1,8 @@
++service: payments
++aws:
++  region: us-east-1
++  access_key_id: AKIAIOSFODNN7EXAMPLE
++  secret_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
++db:
++  host: payments.internal
++  password: "hunter2-super-secret"
+diff --git a/internal/config/load.go b/internal/config/load.go
+new file mode 100644
+index 0000000..2222222
+--- /dev/null
++++ b/internal/config/load.go
+@@ -0,0 +1,16 @@
++package config
++
++import "os"
++
++func Load() Config {
++	return Config{
++		Region: os.Getenv("AWS_REGION"),
++		// fallback so staging boots without SSM
++		GitHubToken: "ghp_exampleExampleExampleExample0001",
++	}
++}
++
++type Config struct {
++	Region      string
++	GitHubToken string
++}
