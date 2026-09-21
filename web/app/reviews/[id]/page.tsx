@@ -57,7 +57,7 @@ export default function ReviewDetailPage() {
           <Badge kind={review.status}>{review.status}</Badge>
           <span className="font-mono text-xs text-zinc-500">{review.sha.slice(0, 12)}</span>
           <span className="text-xs text-zinc-500">
-            {comments.length} GitHub-shaped comments · {findings.length} findings
+            · {comments.length} GitHub-shaped comments · {findings.length} findings
           </span>
         </div>
 

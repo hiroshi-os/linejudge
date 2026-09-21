@@ -3,6 +3,7 @@ package httpapi
 import (
 	"context"
 	"crypto/rand"
+	"crypto/sha1"
 	"database/sql"
 	"encoding/hex"
 	"encoding/json"
@@ -337,7 +338,8 @@ func (s *Server) replay(w http.ResponseWriter, r *http.Request) {
 	if ing.Title == "" {
 		ing.Title = fx.Meta.Title
 	}
-	ing.SHA = fmt.Sprintf("%040x", time.Now().UnixNano())[:40]
+	sum := sha1.Sum([]byte(delivery + ":" + name))
+	ing.SHA = hex.EncodeToString(sum[:])
 	rev, created, err := s.enqueueFromIngest(r.Context(), delivery, ing, fx.Diff)
 	if err != nil {
 		httpError(w, err)
