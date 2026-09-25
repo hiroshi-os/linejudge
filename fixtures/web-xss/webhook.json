@@ -1,0 +1,17 @@
+{
+  "action": "opened",
+  "number": 19,
+  "_fixture": "web-xss",
+  "pull_request": {
+    "number": 19,
+    "title": "Render campaign HTML from query for preview",
+    "head": { "sha": "deface00deface00deface00deface00deface00", "ref": "feat/preview-html" },
+    "base": { "ref": "main", "sha": "ccc333ccc333ccc333ccc333ccc333ccc333ccc3" }
+  },
+  "repository": {
+    "full_name": "acme/web-app",
+    "name": "web-app",
+    "owner": { "login": "acme" }
+  },
+  "installation": { "id": 1 }
+}

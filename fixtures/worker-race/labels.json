@@ -1,0 +1,49 @@
+{
+  "issues": [
+    {
+      "id": "race-map",
+      "path": "internal/pool/pool.go",
+      "line": 16,
+      "line_end": 16,
+      "category": "concurrency",
+      "severity": "error",
+      "description": "Map write from goroutine without mutex"
+    },
+    {
+      "id": "ctx-bg",
+      "path": "internal/pool/pool.go",
+      "line": 14,
+      "line_end": 14,
+      "category": "correctness",
+      "severity": "warning",
+      "description": "go func without request context"
+    },
+    {
+      "id": "skip-verify",
+      "path": "internal/pool/pool.go",
+      "line": 24,
+      "line_end": 24,
+      "category": "tls",
+      "severity": "error",
+      "description": "InsecureSkipVerify"
+    },
+    {
+      "id": "http-timeout",
+      "path": "internal/pool/pool.go",
+      "line": 28,
+      "line_end": 28,
+      "category": "availability",
+      "severity": "error",
+      "description": "http.Client with no timeout"
+    },
+    {
+      "id": "complexity",
+      "path": "internal/pool/pool.go",
+      "line": 33,
+      "line_end": 33,
+      "category": "complexity",
+      "severity": "warning",
+      "description": "Decide has high cyclomatic complexity"
+    }
+  ]
+}

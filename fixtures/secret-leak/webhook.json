@@ -1,0 +1,17 @@
+{
+  "action": "opened",
+  "number": 128,
+  "_fixture": "secret-leak",
+  "pull_request": {
+    "number": 128,
+    "title": "Load prod credentials from the repo for faster deploys",
+    "head": { "sha": "c0ffee01c0ffee01c0ffee01c0ffee01c0ffee01", "ref": "feat/inline-creds" },
+    "base": { "ref": "main", "sha": "aaa111aaa111aaa111aaa111aaa111aaa111aaa1" }
+  },
+  "repository": {
+    "full_name": "acme/payments",
+    "name": "payments",
+    "owner": { "login": "acme" }
+  },
+  "installation": { "id": 1 }
+}

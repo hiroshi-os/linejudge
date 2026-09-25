@@ -1,0 +1,31 @@
+{
+  "issues": [
+    {
+      "id": "innerhtml",
+      "path": "src/preview.ts",
+      "line": 8,
+      "line_end": 8,
+      "category": "xss",
+      "severity": "error",
+      "description": "innerHTML assignment"
+    },
+    {
+      "id": "eval",
+      "path": "src/preview.ts",
+      "line": 12,
+      "line_end": 12,
+      "category": "xss",
+      "severity": "error",
+      "description": "eval of query payload"
+    },
+    {
+      "id": "ssrf",
+      "path": "src/preview.ts",
+      "line": 15,
+      "line_end": 15,
+      "category": "ssrf",
+      "severity": "error",
+      "description": "fetch of caller-controlled URL"
+    }
+  ]
+}

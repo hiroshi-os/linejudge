@@ -1,0 +1,7 @@
+.git
+data
+*.db
+web/node_modules
+web/.next
+.env
+eval-report.json

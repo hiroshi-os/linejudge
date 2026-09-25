@@ -1,0 +1,17 @@
+{
+  "action": "opened",
+  "number": 80,
+  "_fixture": "tidy-rename",
+  "pull_request": {
+    "number": 80,
+    "title": "Rename pool helper and add a comment",
+    "head": { "sha": "f00df00df00df00df00df00df00df00df00df00d", "ref": "chore/rename-helper" },
+    "base": { "ref": "main", "sha": "ddd444ddd444ddd444ddd444ddd444ddd444ddd4" }
+  },
+  "repository": {
+    "full_name": "acme/gateway",
+    "name": "gateway",
+    "owner": { "login": "acme" }
+  },
+  "installation": { "id": 1 }
+}

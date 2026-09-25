@@ -1,0 +1,69 @@
+diff --git a/internal/pool/pool.go b/internal/pool/pool.go
+new file mode 100644
+index 0000000..7777777
+--- /dev/null
++++ b/internal/pool/pool.go
+@@ -0,0 +1,63 @@
++package pool
++
++import (
++	"crypto/tls"
++	"net/http"
++)
++
++type Pool struct {
++	results map[int]error
++}
++
++func (p *Pool) Start(n int) {
++	for i := 0; i < n; i++ {
++		go func() {
++			idx := i
++			p.results[idx] = p.work()
++		}()
++	}
++}
++
++func (p *Pool) work() error {
++	tr := &http.Transport{
++		TLSClientConfig: &tls.Config{
++			InsecureSkipVerify: true,
++		},
++	}
++	_ = tr
++	client := &http.Client{}
++	_, err := client.Get("https://upstream.internal/health")
++	return err
++}
++
++func (p *Pool) Decide(code int, retry bool, region string, canary bool, sticky bool) string {
++	if code == 0 && retry && region == "us" || canary && sticky {
++		if retry || canary {
++			switch region {
++			case "us":
++				if sticky && canary || retry && code > 0 {
++					return "west"
++				}
++				if !sticky && (canary || retry) {
++					return "east"
++				}
++			case "eu":
++				if retry && !canary {
++					return "dublin"
++				}
++				if canary || sticky {
++					return "frank"
++				}
++			default:
++				if retry || sticky || canary {
++					return "any"
++				}
++			}
++		} else if code > 0 && retry {
++			return "hold"
++		}
++	} else if code > 499 && (retry || canary) {
++		return "shed"
++	}
++	return "drop"
++}

@@ -1,0 +1,34 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      LINEJUDGE_ADDR: ":8080"
+      LINEJUDGE_DB: /data/linejudge.db
+      LINEJUDGE_FIXTURES: /app/fixtures
+      LINEJUDGE_ROLE: all
+      LINEJUDGE_LLM_PROVIDER: mock
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+      GITHUB_WEBHOOK_SECRET: ${GITHUB_WEBHOOK_SECRET:-}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      GITHUB_APP_INSTALLATION_TOKEN: ${GITHUB_APP_INSTALLATION_TOKEN:-}
+    volumes:
+      - linejudge-data:/data
+
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      LINEJUDGE_API_URL: http://api:8080
+    depends_on:
+      - api
+
+volumes:
+  linejudge-data:

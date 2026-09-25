@@ -1,0 +1,40 @@
+{
+  "issues": [
+    {
+      "id": "sql-inject",
+      "path": "internal/http/invoices.go",
+      "line": 16,
+      "line_end": 16,
+      "category": "sql-injection",
+      "severity": "error",
+      "description": "fmt.Sprintf into SELECT"
+    },
+    {
+      "id": "todo-authz",
+      "path": "internal/http/invoices.go",
+      "line": 18,
+      "line_end": 18,
+      "category": "correctness",
+      "severity": "error",
+      "description": "TODO(security) left in the handler"
+    },
+    {
+      "id": "nplusone",
+      "path": "internal/http/invoices.go",
+      "line": 21,
+      "line_end": 21,
+      "category": "perf",
+      "severity": "warning",
+      "description": "QueryRow inside loop"
+    },
+    {
+      "id": "authz-gap",
+      "path": "internal/http/invoices.go",
+      "line": 27,
+      "line_end": 27,
+      "category": "authz",
+      "severity": "error",
+      "description": "HandleFunc registered without auth middleware"
+    }
+  ]
+}

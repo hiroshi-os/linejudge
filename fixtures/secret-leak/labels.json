@@ -1,0 +1,31 @@
+{
+  "issues": [
+    {
+      "id": "aws-key",
+      "path": "config/prod.yaml",
+      "line": 4,
+      "line_end": 4,
+      "category": "secret",
+      "severity": "critical",
+      "description": "Hardcoded AWS access key id"
+    },
+    {
+      "id": "db-password",
+      "path": "config/prod.yaml",
+      "line": 8,
+      "line_end": 8,
+      "category": "secret",
+      "severity": "critical",
+      "description": "Database password literal"
+    },
+    {
+      "id": "github-pat",
+      "path": "internal/config/load.go",
+      "line": 9,
+      "line_end": 9,
+      "category": "secret",
+      "severity": "critical",
+      "description": "GitHub PAT in source"
+    }
+  ]
+}
